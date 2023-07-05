@@ -39,3 +39,5 @@ Controle de gerenciamento de pedidos
   
 ## Modelagem do Dominio
 
+## Event Storming
+- Acesse https://miro.com/app/board/uXjVM4hKAVc=/?share_link_id=546864818586
