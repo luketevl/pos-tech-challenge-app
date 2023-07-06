@@ -9,13 +9,12 @@ services:
     env_file:
       - .env
     ports:
-      - 3334:3334
+      - 3004:3004
     volumes:
-      - ./api:usr/src/app
-      - ./api/node_modules:/usr/src/app/node_modules
-
+      - .:/usr/src/app
+      - ./node_modules:/usr/src/app/node_modules
   postgres:
-    image: public.ecr.aws/bitnami/postgresql:11:19.0
+    image: bitnami/postgresql:latest 
     volumes:
       - ./sql/create_schema.sql:/docker-entrypoint-initdb.d/create_schema.sql
       - ./sql/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
