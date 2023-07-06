@@ -1,0 +1,1 @@
+INSERT INTO(nome) categorias VALUES ('Lanche'), ('Acompanhamento'), ('Bebida'), ('Sobremesa')

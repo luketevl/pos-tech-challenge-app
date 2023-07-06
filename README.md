@@ -28,7 +28,7 @@ Controle de gerenciamento de pedidos
 
 ## Linguaguem Ubiqua
 ### Dicionario
-- **Cliente**: Toda pessoa que inicia o processo de abertura de um pedido no sistema.
+-rout **Cliente**: Toda pessoa que inicia o processo de abertura de um pedido no sistema.
 - **Atendente**: Todo pessoa que trabalha na empresa, seja no caixa, cozinha ou atendimento ao cliente.
 - **Administrador**: Todo pessoa que trabalha na empresa, e que tenha permissao para gerenciar os produtos, categorias e pedidos na area administrativa do sistema.
 - **Produto**: Todo o item comercializado pela empresa
@@ -44,7 +44,7 @@ Controle de gerenciamento de pedidos
 
 # API
 ## Rotas
-> Documentacao das rotas disponniveis
+> Documentacao das rotas disponiveis, elas podem ser acessadas tambem nessa collection (https://documenter.getpostman.com/view/483864/2s93zFWK1f)
 ### Cliente
 - Path `/cliente`
     - **POST**: Cria um novo cliente
@@ -63,7 +63,7 @@ Controle de gerenciamento de pedidos
 - **Resposta**
 ```json
 {
-"id": 1,
+"id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
 "cpf": "80845052209",
 "nome": "Lukete",
 "email": "email@example.com",
@@ -80,7 +80,7 @@ Controle de gerenciamento de pedidos
 ```json
 {
 
-"id": 1,
+"id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
 "cpf": "80845052209",
 "nome": "Lukete",
 "email": "email@example.com",
@@ -99,20 +99,20 @@ Controle de gerenciamento de pedidos
 {
 "nome": "Produto x",
 "descricao": "Descricao y",
-"id_categoria": 1,
+"id_categoria": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
 "preco": 99.89,
-"imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500",
+"imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500"
 }
 ```
 - **Resposta**
 ```json
 {
-"id": 1,
+"id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
 "nome": "Produto x",
 "descricao": "Descricao y",
-"id_categoria": 1,
+"id_categoria": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
 "preco": 99.89,
-"imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500",
+"imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500"
 }
 ```
 
@@ -124,12 +124,12 @@ Controle de gerenciamento de pedidos
   - **Resposta**
 ```json
 [{
-"id": 1,
+"id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
 "nome": "Produto x",
 "descricao": "Descricao y",
-"id_categoria": 1,
+"id_categoria": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
 "preco": 399.34,
-"imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500",
+"imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500"
 }]
 ```
 
@@ -143,9 +143,9 @@ Controle de gerenciamento de pedidos
 {
 "nome": "Produto x editado",
 "descricao": "Descricao y editada",
-"id_categoria": 1,
+"id_categoria": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
 "preco": 399.34,
-"imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500",
+"imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500"
 }
 ``` 
 
@@ -176,54 +176,31 @@ Controle de gerenciamento de pedidos
   - **Payload**
 ```json
 {
-"status": "C",
-"pedido_items": [
-  {
-    "quantidade": 1,
-    "id_produto": 1
-  },
-  {
-    "quantidade": 4,
-    "id_produto": 2
-  },
-]
+  "status": "C",
+  "id_cliente": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
+  "pedido_items": [
+    {
+      "quantidade": 1,
+      "id_produto": "5a68ef06-1b8c-11ee-8fe5-023afac12b88"
+    },
+    {
+      "quantidade": 4,
+      "id_produto": "5a68ef06-1b8c-11ee-8fe5-023afac12b88"
+    }
+  ]
+}
 ```
 - **Resposta**
 ```json
 {
-"id": 1,
-"data_criacao": "2023-31-03 14:22:10",
-"status": "C",
-"pedido_items": [
-    {
-      "id": 1,
-      "quantidade": 1,
-      "produto": {
-        "id": 1,
-        "nome": "Produto x",
-        "descricao": "Descricao y",
-        "id_categoria": 1,
-        "preco": 399.34,
-        "imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500",
-      }
-    },
- {
-      "id": 2,
-      "quantidade": 4,
-      "produto": {
-        "id": 2,
-        "nome": "Produto x2",
-        "descricao": "Descricao y2",
-        "id_categoria": 3,
-        "preco": 1399.34,
-        "imagens": "https://random.imagecdn.app/500/500",
-      }
-    }
-   ]
-]
+  "id": 1,
+  "data_criacao": "2023-31-03 14:22:10",
+  "id_cliente": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
+  "status": "C"
+}
 ```
 
- Path  /pedidos`
+ Path  `/pedido`
   - **GET**: Busca todos os pedidos
   - **HTTP Code**:
     - 200 - sucesso
@@ -233,18 +210,25 @@ Controle de gerenciamento de pedidos
   {
   "id": 1,
   "data_criacao": "2023-31-03 14:22:10",
+  "clientes": {
+    "id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
+    "cpf": "80845052209",
+    "nome": "Lukete",
+    "email": "email@example.com",
+    "telefone": "+553199345783"
+  },
   "status": "C",
   "pedido_items": [
     {
-      "id": 1,
+      "id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
       "quantidade": 1,
       "produto": {
-        "id": 1,
+        "id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
         "nome": "Produto x",
         "descricao": "Descricao y",
-        "id_categoria": 1,
+        "id_categoria": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
         "preco": 399.34,
-        "imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500",
+        "imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500"
       }
     }
    ]
@@ -253,17 +237,24 @@ Controle de gerenciamento de pedidos
   "id": 2,
   "data_criacao": "2023-31-03 15:44:30",
   "status": "P",
+  "clientes": {
+    "id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
+    "cpf": "80845052209",
+    "nome": "Lukete",
+    "email": "email@example.com",
+    "telefone": "+553199345783"
+  },
    "pedido_items": [
     {
-      "id": 1,
+      "id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
       "quantidade": 4,
       "produto": {
-        "id": 2,
+        "id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
         "nome": "Produto x",
         "descricao": "Descricao y",
-        "id_categoria": 1,
+        "id_categoria": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
         "preco": 399.34,
-        "imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500",
+        "imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500"
       }
     }
    ]
@@ -271,4 +262,34 @@ Controle de gerenciamento de pedidos
 ]
 ```
 
+### Categoria
 
+
+ Path  `/categoria`
+  - **GET**: Lista todas as categorias
+  - **HTTP Code**:
+    - 200 - sucesso 
+  - **Resposta**
+```json
+[
+  {
+    "id": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
+    "nome": "Categoria 1"
+  },
+  {
+    "id": "5a68ef06-1b8c-12ee-8fe5-023afac12b88",
+    "nome": "Categoria 2"
+  } 
+]
+```
+
+# Comandos
+## Desenvolvimento
+- Local **com** docker `docker compose up`
+- Local **sem** docker `npm run dev`
+
+### Producao
+> Sistema utiliza container docker pronto com o build realizado.
+
+### K8S
+- Para subir no **kubernetes** basta rodar o comando `npm run deploy && npm run k8s`

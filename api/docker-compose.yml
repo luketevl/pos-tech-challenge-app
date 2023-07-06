@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      target: development
+    command: npm run dev
+    env_file:
+      - .env
+    ports:
+      - 3334:3334
+    volumes:
+      - ./api:usr/src/app
+      - ./api/node_modules:/usr/src/app/node_modules
+
+  postgres:
+    image: public.ecr.aws/bitnami/postgresql:11:19.0
+    volumes:
+      - ./sql/create_schema.sql:/docker-entrypoint-initdb.d/create_schema.sql
+      - ./sql/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_USER: 'postgres'
+    ports:
+      - "5432:5432"

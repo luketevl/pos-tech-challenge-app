@@ -1,0 +1,50 @@
+GET http://localhost:3004/api/categoria
+
+###
+
+POST http://localhost:3004/api/cliente
+content-type: application/json
+
+{
+    "cpf": "80845052209",
+    "nome": "Lukete",
+    "email": "email@example.com",
+    "telefone": "+553199345783"
+}
+
+###
+
+GET http://localhost:3004/api/cliente/80845052209
+
+### 
+
+POST http://localhost:3004/api/produto
+content-type: application/json
+
+{
+  "nome": "Produto x",
+  "descricao": "Descricao y",
+  "id_categoria": "5a68ef06-1b8c-11ee-8fe5-023afac12b88",
+  "preco": 99.89,
+  "imagens": "https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500, https://random.imagecdn.app/500/500"
+}
+
+###
+
+POST http://localhost:3004/api/pedido
+content-type: application/json
+
+{
+    "status": "C",
+    "id_cliente": "a66485c4-1b90-11ee-ba30-023afac12b88",
+    "pedido_items": [
+        {
+        "quantidade": 1,
+        "id_produto": "07aa866e-1b94-11ee-b24e-023afac12b88"
+        },
+        {
+        "quantidade": 4,
+        "id_produto": "07aa866e-1b94-11ee-b24e-023afac12b88"
+        }
+    ]
+}
