@@ -28,7 +28,7 @@ Controle de gerenciamento de pedidos
 
 ## Linguaguem Ubiqua
 ### Dicionario
--rout **Cliente**: Toda pessoa que inicia o processo de abertura de um pedido no sistema.
+- **Cliente**: Toda pessoa que inicia o processo de abertura de um pedido no sistema.
 - **Atendente**: Todo pessoa que trabalha na empresa, seja no caixa, cozinha ou atendimento ao cliente.
 - **Administrador**: Todo pessoa que trabalha na empresa, e que tenha permissao para gerenciar os produtos, categorias e pedidos na area administrativa do sistema.
 - **Produto**: Todo o item comercializado pela empresa
