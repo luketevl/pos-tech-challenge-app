@@ -284,6 +284,11 @@ Controle de gerenciamento de pedidos
 ```
 
 # Comandos
+
+# Instalacao:
+```shell
+npm i
+```
 ## Desenvolvimento
 - Local **com** docker `npm start`
 - Local **sem** docker `npm run dev`
