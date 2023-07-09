@@ -285,7 +285,7 @@ Controle de gerenciamento de pedidos
 
 # Comandos
 ## Desenvolvimento
-- Local **com** docker `docker compose up`
+- Local **com** docker `npm start`
 - Local **sem** docker `npm run dev`
 
 ### Producao

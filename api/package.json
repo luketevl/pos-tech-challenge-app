@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && npx prisma generate",
     "dev": "tsx watch src/index.ts",
-    "deploy": "docker build -f Dockerfile . -t tech-challenge-fase1-api && docker push tech-challenge-fase1-api && kubectl apply -f k8sconfig/postgres-deployment.yaml && kubectl apply -f api-deployment.yaml && kubectl apply -f hpa.yaml",
-    "k8s": "kubectl create -f k8sconfig/postgres-configmap.yaml && kubectl create -f k8sconfig/postgres-storage.yaml"
+    "deploy": "docker build -f Dockerfile . -t luketevl/tech-challenge-fase1 && docker push luketevl/tech-challenge-fase1 && kubectl apply -f k8sconfig/postgres-deployment.yaml && kubectl apply -f api-deployment.yaml && kubectl apply -f hpa.yaml",
+    "k8s": "kubectl create -f k8sconfig/postgres-configmap.yaml && kubectl create -f k8sconfig/postgres-storage.yaml",
+    "start": "docker compose up"
   },
   "keywords": [],
   "author": "",
