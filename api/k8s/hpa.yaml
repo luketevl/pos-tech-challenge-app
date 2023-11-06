@@ -4,7 +4,7 @@ items:
 - apiVersion: v1
   kind: Service
   metadata:
-    name: techchallengefase1api-service
+    name: techchallengeapp-service
   spec:
     type: NodePort
     ports:
@@ -12,12 +12,12 @@ items:
         port: 8080
         targetPort: 8080
     selector:
-      app: techchallengefase1api-deployment
+      app: techchallengeapp-deployment
 
 - apiVersion: autoscaling/v1
   kind: HorizontalPodAutoscaler
   metadata:
-    name: techchallengefase1api-hpa
+    name: techchallengeapp-hpa
     namespace: default
   spec:
     targetCPUUtilizationPercentage: 70
@@ -26,7 +26,7 @@ items:
     scaleTargetRef:
       apiVersion: apps/v1
       kind: Deployment
-      name: techchallengefase1api-deployment
+      name: techchallengeapp-deployment
       
 - apiVersion: v1
   kind: Service

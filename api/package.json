@@ -6,9 +6,10 @@
   "scripts": {
     "build": "tsup && npx prisma generate",
     "dev": "tsx watch src/index.ts",
-    "deploy": "docker build -f Dockerfile . -t luketevl/tech-challenge-fase1 && docker push luketevl/tech-challenge-fase1 && kubectl apply -f k8sconfig/postgres-deployment.yaml && kubectl apply -f api-deployment.yaml && kubectl apply -f hpa.yaml",
-    "k8s": "kubectl create -f k8sconfig/postgres-configmap.yaml && kubectl create -f k8sconfig/postgres-storage.yaml",
-    "start": "docker compose up"
+    "deploy": "docker build -f Dockerfile . -t luketevl/tech-challenge-fase1 && docker push luketevl/tech-challenge-fase1 && kubectl apply -f k8s/postgres-deployment.yaml && kubectl apply -f api-deployment.yaml && kubectl apply -f hpa.yaml",
+    "k8s": "kubectl create -f k8s/postgres-configmap.yaml && kubectl create -f k8s/postgres-storage.yaml",
+    "start": "docker compose up",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -30,7 +31,8 @@
     "prisma": "^4.16.2",
     "tsup": "^7.1.0",
     "tsx": "^3.12.7",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vitest": "^0.34.6"
   },
   "dependencies": {
     "@prisma/client": "^4.16.2",

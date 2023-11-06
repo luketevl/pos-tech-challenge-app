@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: techchallengefase1api-deployment
+  name: techchallengeapp-deployment
 spec:
   revisionHistoryLimit: 2
   replicas: 1
@@ -11,17 +11,17 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
-      app: techchallengefase1api-deployment
+      app: techchallengeapp-deployment
       visualize: "true"
   template:
     metadata:
       labels:
-        app: techchallengefase1api-deployment
+        app: techchallengeapp-deployment
         visualize: "true"
     spec:
       containers:
-        - name: techchallengefase1api-deployment
-          image: techchallengefase1api-deployment
+        - name: techchallengeapp-deployment
+          image: amazonaws.com/restaurante-service 
           resources:
             limits:
               cpu: 750m

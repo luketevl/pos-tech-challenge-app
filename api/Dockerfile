@@ -3,6 +3,9 @@ from node:lts as development
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
 
+ARG DATABASE_URL=${DATABASE_URL}
+ENV DATABASE_URL=${DATABASE_URL}
+
 WORKDIR /usr/src/app
 
 COPY package*.json .
@@ -11,7 +14,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+RUN DATABASE_URL=$DATABASE_URL npm run build
 
 FROM node:lts as production
 
